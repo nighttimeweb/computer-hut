@@ -1,133 +1,410 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Computer Hut</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Computer Hut</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <style>
+    :root {
+      --primary-color: #7ac142;
+      --secondary-color: #4a8f29;
+      --accent-color: #e9f5e1;
+      --text-color: #333;
+      --light-text: #fff;
+      --dark-bg: #222;
+      --light-bg: #f8f9fa;
+      --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--light-bg);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    header {
+      background: #fff;
+      box-shadow: var(--shadow);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      padding: 1rem 0;
+    }
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo h1 {
+      font-size: 1.8rem;
+      color: var(--primary-color);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin-left: 2rem;
+    }
+
+    nav ul li a {
+      color: var(--text-color);
+      font-weight: 500;
+      position: relative;
+    }
+
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary-color);
+      transition: var(--transition);
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      color: var(--light-text);
+      padding: 10rem 0 6rem;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      background: var(--light-text);
+      color: var(--primary-color);
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+    }
+
+    .btn:hover {
+      background: var(--accent-color);
+      color: var(--secondary-color);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    section {
+      padding: 5rem 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      color: var(--text-color);
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--primary-color);
+      border-radius: 2px;
+    }
+
+    .about-content {
+      display: flex;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-text, .about-image {
+      flex: 1;
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .about-image img:hover {
+      transform: scale(1.03);
+    }
+
+    .gallery {
+      background: var(--accent-color);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .gallery-item {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .contact-content {
+      display: flex;
+      gap: 4rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-item i {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      margin-right: 1rem;
+      width: 40px;
+      height: 40px;
+      background: var(--accent-color);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+    }
+
+    .contact-form textarea {
+      min-height: 150px;
+    }
+
+    footer {
+      background: var(--dark-bg);
+      color: var(--light-text);
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    .social-links a {
+      color: var(--light-text);
+      margin-left: 1rem;
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      color: var(--primary-color);
+    }
+
+    .webuy-section {
+      background: #fff;
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+
+    .webuy-section h2 {
+      color: var(--primary-color);
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .webuy-section img {
+      max-width: 100%;
+      height: auto;
+      margin: 2rem 0;
+    }
+
+    .webuy-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 2rem auto;
+      max-width: 400px;
+      text-align: left;
+    }
+
+    .webuy-section ul li {
+      font-size: 1.1rem;
+      margin: 0.5rem 0;
+    }
+
+    .webuy-highlight {
+      font-weight: bold;
+      color: red;
+    }
+  </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1>The Computer Hut</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <header>
+    <div class="container">
+      <div class="logo"><h1>The Computer Hut</h1></div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h2>Your One-Stop Computer Shop</h2>
-                <p>Quality computers, expert service, and competitive prices</p>
-                <a href="https://craigslist.org" class="btn products-btn" target="_blank">Our Products</a>
-            </div>
-        </div>
-    </section>
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h2>Your One-Stop Computer Shop</h2>
+        <p>Quality computers, expert service, and competitive prices</p>
+        <a href="https://craigslist.org" class="btn" target="_blank">Our Products</a>
+      </div>
+    </div>
+  </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Us</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Our goal at The Computer Hut is to find you the right computer at the best price or fix the one you currently have for the best rate around. Our specialty is Macs but we have plenty of experience with PCs also.</p>
-                    <p>We fix iPhones as well. Whatever your computer needs, come check out our shop and see tons of great deals on refurbished laptops and everything electronic.</p>
-                    <p>At The Computer Hut, we offer iPhone, Laptop and Desktop Repair services with professional expertise and competitive rates. Visit us today to see how we can help with your technology needs.</p>
-                </div>
-                <div class="about-image">
-                    <img src="computer front.jpg" alt="Computer Hut Store">
-                </div>
-            </div>
+  <section id="about" class="about">
+    <div class="container">
+      <h2 class="section-title">About Us</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>Our goal at The Computer Hut is to find you the right computer at the best price or fix the one you currently have for the best rate around. Our specialty is Macs but we have plenty of experience with PCs also.</p>
+          <p>We fix iPhones as well. Whatever your computer needs, come check out our shop and see tons of great deals on refurbished laptops and everything electronic.</p>
+          <p>At The Computer Hut, we offer iPhone, Laptop and Desktop Repair services with professional expertise and competitive rates. Visit us today to see how we can help with your technology needs.</p>
         </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
-        <div class="container">
-            <h2 class="section-title">Our Gallery</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="images/computer1.jpeg" alt="Computer Setup">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/computer2.jpeg" alt="Laptop Display">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/computer3.jpeg" alt="Desktop Computer">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/computer4.jpeg" alt="Gaming Setup">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/computer5.jpeg" alt="Computer Components">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/computer6.jpeg" alt="Computer Accessories">
-                </div>
-            </div>
+        <div class="about-image">
+          <img src="images/store.jpg" alt="Computer Hut Store" />
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Contact Us</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>71 Main Street New Paltz NY 12561</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <p>845-419-2511</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <p>info@computerhut.com</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        <p>Monday through Friday 11-6 (closed weekends)</p>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form>
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                        <textarea placeholder="Your Message" required></textarea>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
-                </div>
-            </div>
+  <section class="webuy-section">
+    <div class="container">
+      <h2>We Buy Used Electronics</h2>
+      <img src="images/webuy.jpg" alt="We Buy Used Electronics" />
+      <p class="webuy-highlight">Cash on the spot or trade in towards purchase</p>
+      <ul>
+        <li>Laptops</li>
+        <li>Desktops</li>
+        <li>Apple Products</li>
+        <li>MP3 Players</li>
+        <li>Flat Screens</li>
+        <li>Computer Accessories</li>
+        <li>Gaming Systems</li>
+        <li>Video Games</li>
+        <li>DVD/BlueRay Movies</li>
+      </ul>
+      <p>Bring anything in for a fast and free quote.<br/>We even buy broken MacBooks.</p>
+    </div>
+  </section>
+
+  <section id="gallery" class="gallery">
+    <div class="container">
+      <h2 class="section-title">Our Gallery</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="images/computer1.jpeg" alt="Computer Setup" /></div>
+        <div class="gallery-item"><img src="images/computer2.jpeg" alt="Laptop Display" /></div>
+        <div class="gallery-item"><img src="images/computer3.jpeg" alt="Desktop Computer" /></div>
+        <div class="gallery-item"><img src="images/computer4.jpeg" alt="Gaming Setup" /></div>
+        <div class="gallery-item"><img src="images/computer5.jpeg" alt="Computer Components" /></div>
+        <div class="gallery-item"><img src="images/computer6.jpeg" alt="Computer Accessories" /></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="section-title">Contact Us</h2>
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="contact-item"><i class="fas fa-map-marker-alt"></i><p>71 Main Street New Paltz NY 12561</p></div>
+          <div class="contact-item"><i class="fas fa-phone"></i><p>845-419-2511</p></div>
+          <div class="contact-item"><i class="fas fa-envelope"></i><p>info@computerhut.com</p></div>
+          <div class="contact-item"><i class="fas fa-clock"></i><p>Monday through Friday 11–6 (closed weekends)</p></div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 The Computer Hut. All Rights Reserved.</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            </div>
+        <div class="contact-form">
+          <form>
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+          </form>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 The Computer Hut. All Rights Reserved.</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
