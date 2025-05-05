@@ -3,175 +3,94 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Computer Hut</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <style>
-    body {
-      background: linear-gradient(to bottom, #f7fdf6, #ffffff);
-      background-attachment: fixed;
-    }
-  </style>
+  <title>Mem Capital</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <!-- Header Section -->
   <header>
-    <div class="container">
-      <div class="logo">
-        <h1>The Computer Hut</h1>
+    <nav class="navbar">
+      <div class="logo">Mem Capital</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#strategy">Strategy</a></li>
+        <li><a href="#leadership">Leadership</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <section class="hero">
+      <div class="hero-content glass">
+        <h1>Mem Capital</h1>
+        <p>Innovative Holdings. Timeless Vision.</p>
       </div>
-      <nav>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#prices">Prices</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+    </section>
   </header>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <h2>Your One-Stop Computer Shop</h2>
-        <p>Quality computers, expert service, and competitive prices</p>
-        <a href="https://hudsonvalley.craigslist.org/search/sss?userpostingid=7527159325#search=2~gallery~0" class="btn products-btn" target="_blank">Our Products</a>
-      </div>
-    </div>
-  </section>
+  <main>
+    <section id="about" class="section glass">
+      <h2>About Us</h2>
+      <p>Mem Capital is a visionary holding company investing in scalable ventures across diverse sectors. We blend analytical rigor with bold innovation.</p>
+    </section>
 
-  <!-- About Section -->
-  <section id="about" class="about">
-    <div class="container">
-      <h2 class="section-title">About Us</h2>
-      <div class="about-content">
-        <div class="about-text">
-          <p>Our goal at The Computer Hut is to find you the right computer at the best price or fix the one you currently have for the best rate around. Our specialty is Macs but we have plenty of experience with PCs also.</p>
-          <p>We fix iPhones as well. Whatever your computer needs, come check out our shop and see tons of great deals on refurbished laptops and everything electronic.</p>
-          <p>At The Computer Hut, we offer iPhone, Laptop and Desktop Repair services with professional expertise and competitive rates. Visit us today to see how we can help with your technology needs.</p>
-        </div>
-        <div class="about-image">
-          <img src="computer front.jpg" alt="Computer Hut Store" />
-        </div>
+    <section id="portfolio" class="section">
+      <h2>Portfolio</h2>
+      <div class="cards">
+        <div class="card">NovaTech AI</div>
+        <div class="card">Aether Biolabs</div>
+        <div class="card">Orion Grid</div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Gallery Section -->
-  <section id="gallery" class="gallery">
-    <div class="container">
-      <h2 class="section-title">Our Gallery</h2>
-      <div class="gallery-grid">
-        <div class="gallery-item"><img src="computer1.jpeg" alt="Computer Setup" /></div>
-        <div class="gallery-item"><img src="computer2.jpeg" alt="Laptop Display" /></div>
-        <div class="gallery-item"><img src="computer3.jpeg" alt="Desktop Computer" /></div>
-        <div class="gallery-item"><img src="computer4.jpeg" alt="Gaming Setup" /></div>
-        <div class="gallery-item"><img src="computer5.jpeg" alt="Computer Components" /></div>
-        <div class="gallery-item"><img src="computer6.jpeg" alt="Computer Accessories" /></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- We Buy Used Electronics Section -->
-  <section class="webuy-section" style="background-color: #ffffff; padding: 5rem 1rem;">
-    <div class="container">
-      <h2 class="section-title">We Buy Used Electronics</h2>
-      <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
-        <div style="flex: 1 1 300px; background: #f9f9f9; border-radius: 10px; padding: 2rem; box-shadow: 0 5px 20px rgba(0,0,0,0.07);">
-          <h3 style="color: #4a8f29; border-bottom: 2px solid #7ac142; padding-bottom: 0.5rem;">📦 What We Buy</h3>
-          <ul style="list-style: none; padding: 0; line-height: 1.8;">
-            <li>✔ Laptops</li>
-            <li>✔ Desktops</li>
-            <li>✔ Apple Products</li>
-            <li>✔ MP3 Players</li>
-            <li>✔ Flat Screens</li>
-            <li>✔ Computer Accessories</li>
-            <li>✔ Gaming Systems</li>
-            <li>✔ Video Games</li>
-            <li>✔ DVD/Blu-ray Movies</li>
-          </ul>
+    <section id="strategy" class="section glass">
+      <h2>Investment Strategy</h2>
+      <div class="strategy-grid">
+        <div class="strategy-box">
+          <h3>Vision</h3>
+          <p>We back transformative ideas with long-term global potential.</p>
         </div>
-        <div style="flex: 1 1 300px; background: #f9f9f9; border-radius: 10px; padding: 2rem; box-shadow: 0 5px 20px rgba(0,0,0,0.07);">
-          <h3 style="color: #4a8f29; border-bottom: 2px solid #7ac142; padding-bottom: 0.5rem;">💵 Fast & Fair Offers</h3>
-          <p style="margin-bottom: 1rem;">Bring in your old electronics for a fast, no-obligation quote. We’ll inspect it and offer you:</p>
-          <ul style="list-style: none; padding: 0; line-height: 1.8;">
-            <li>💰 <strong>Cash on the spot</strong></li>
-            <li>🔁 Trade-in credit toward a new computer</li>
-            <li>🛠 We even buy broken MacBooks</li>
-          </ul>
+        <div class="strategy-box">
+          <h3>Discipline</h3>
+          <p>We balance risk with precision, leveraging deep market insights.</p>
+        </div>
+        <div class="strategy-box">
+          <h3>Agility</h3>
+          <p>Our structure allows nimble execution across sectors and geographies.</p>
         </div>
       </div>
-      <p style="text-align: center; margin-top: 2rem; font-size: 1.1rem;">
-        No appointment needed — stop by anytime for a quick quote!
-      </p>
-    </div>
-  </section>
+    </section>
 
-  <!-- Prices Section -->
-  <section id="prices" class="repair-section" style="background-color: #f9f9f9; padding: 5rem 1rem;">
-    <div class="container">
-      <h2 class="section-title">iPhone Repair Rates</h2>
-      <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
-        <!-- Screen Repairs -->
-        <!-- Battery Replacements -->
-        <!-- Charging Ports -->
-        <!-- Already in your last code, you can keep that content as-is -->
-      </div>
-      <p style="text-align: center; margin-top: 2rem;">
-        Call or stop by for quotes on camera, earpiece, speaker, or liquid damage repair.<br />
-        <strong>Prices do not include 8% NYS Sales Tax.</strong>
-      </p>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="contact" style="background: linear-gradient(to bottom, #f7fdf6, #ffffff); padding: 5rem 1rem;">
-    <div class="container">
-      <h2 class="section-title">Contact Us</h2>
-      <div style="display: flex; flex-wrap: wrap; gap: 3rem; align-items: flex-start; justify-content: center;">
-        <!-- Map -->
-        <div style="flex: 1 1 400px;">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2972.1541214250923!2d-74.08847568456597!3d41.747508779234975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89dd260cd15d4b17%3A0x8a8807c2a66de67d!2s71%20Main%20St%2C%20New%20Paltz%2C%20NY%2012561!5e0!3m2!1sen!2sus!4v1681234567890"
-            width="100%"
-            height="100%"
-            style="min-height: 500px; border: 0; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
-
-        <!-- Info + Form -->
-        <div style="flex: 1 1 400px; background: #f9f9f9; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);">
-          <div style="margin-bottom: 2rem;">
-            <p><i class="fas fa-map-marker-alt" style="color: #7ac142; margin-right: 0.5rem;"></i>71 Main Street, New Paltz, NY 12561</p>
-            <p><i class="fas fa-phone" style="color: #7ac142; margin-right: 0.5rem;"></i>845-419-2511</p>
-            <p><i class="fas fa-envelope" style="color: #7ac142; margin-right: 0.5rem;"></i>info@computerhut.com</p>
-            <p><i class="fas fa-clock" style="color: #7ac142; margin-right: 0.5rem;"></i>Mon–Fri: 11:00 AM – 6:00 PM<br />Closed on weekends</p>
+    <section id="leadership" class="section">
+      <h2>Leadership</h2>
+      <div class="leaders">
+        <div class="leader-card">
+          <div class="overlay">
+            <h3>Alex Mercer</h3>
+            <p>Founder & CEO</p>
           </div>
-          <form>
-            <input type="text" placeholder="Your Name" required style="width: 100%; padding: 1rem; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 6px;" />
-            <input type="email" placeholder="Your Email" required style="width: 100%; padding: 1rem; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 6px;" />
-            <textarea placeholder="Your Message" required style="width: 100%; padding: 1rem; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 6px; min-height: 150px;"></textarea>
-            <button type="submit" class="btn" style="border: none;">Send Message</button>
-          </form>
+        </div>
+        <div class="leader-card">
+          <div class="overlay">
+            <h3>Jade Williams</h3>
+            <p>Chief Strategy Officer</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
+    <section id="contact" class="section glass">
+      <h2>Contact</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
   <footer>
-    <div class="container">
-      <p>&copy; 2025 The Computer Hut. All Rights Reserved.</p>
-      <p class="footer-credit">Made with care by <a href="https://nighttimeweb.com" target="_blank">Nighttime Website Development</a></p>
-    </div>
+    <p>&copy; 2025 Mem Capital. All rights reserved.</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
